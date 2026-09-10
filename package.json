@@ -1,0 +1,15 @@
+{
+  "name": "axiom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "CAPACITY/STATE. D = n/|G|. Neuf algorithmes, douze corpus, une batterie falsifiable. Pas une app.",
+  "scripts": {
+    "test": "npx tsx --test src/battery.test.ts src/limits.test.ts src/ca/elementary.test.ts",
+    "battery": "npx tsx src/cli.ts battery"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0"
+  },
+  "license": "MIT"
+}

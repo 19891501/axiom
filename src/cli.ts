@@ -5,6 +5,7 @@ import { CORPORA } from "./corpora";
 import { runSequitur, runRepair } from "./algorithms";
 import { oracleFor, tamperOneTerminal, verify } from "./verify";
 import { ENGINES, getTrace } from "./thermo";
+import { F1, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -83,5 +84,12 @@ if (cmd === "thermo") {
   process.exit(ok ? 0 : 1);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify|thermo]");
+if (cmd === "spec") {
+  console.log(PHASE2_STATUS.toUpperCase(), PHASE2_FROZEN_ON);
+  console.log(QUESTION);
+  console.log("F1 not executed");
+  process.exit(0);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify|thermo|spec]");
 process.exit(2);

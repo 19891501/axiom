@@ -70,4 +70,11 @@ npx tsx src/cli.ts thermo
 
 [`experiments/THERMO.md`](experiments/THERMO.md).
 
+## Phase 2 (gelée, pas courue)
+
+C n’est plus n. `max C/S` sous `K ≤ K_max`. Premier examen : F1, une fonction, Q_test disjoint. **Pas de runner.**
+
+[`experiments/PHASE2.md`](experiments/PHASE2.md).
+
+
 

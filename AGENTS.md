@@ -13,4 +13,6 @@ où: github.com/19891501/axiom
 
 Interdit : app, comptes, agents, « explorer X » comme travail. Interdit : changer le critère après un run.
 
-Une unité par session, puis on pousse. Si `experiments/runs/` n’a rien de neuf : **quand même** une unité (test, run, ou kill). Pas d’AION ici. Phase 2 n’entre pas tant que Phase 1 survit.
+Une unité par session, puis on pousse. Si `experiments/runs/` n’a rien de neuf : **quand même** une unité (test, run, ou kill). Pas d’AION ici.
+
+Phase 2 a un protocole gelé (`experiments/PHASE2.md`). **Pas de runner.** F1 n’est pas exécuté. Phase 1 survit.

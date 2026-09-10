@@ -17,4 +17,5 @@ jobs:
       - run: npm run battery
       - run: npm run verify
       - run: npm run thermo
+      - run: npm run floor
       - run: npm run spec

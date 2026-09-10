@@ -5,7 +5,8 @@ import { CORPORA } from "./corpora";
 import { runSequitur, runRepair } from "./algorithms";
 import { oracleFor, tamperOneTerminal, verify } from "./verify";
 import { ENGINES, getTrace } from "./thermo";
-import { F1, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
+import { closestToCeiling, getFloorTrace, theoremL, theoremS, theoremT } from "./thermoLimits";
+import { PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -84,6 +85,23 @@ if (cmd === "thermo") {
   process.exit(ok ? 0 : 1);
 }
 
+if (cmd === "floor") {
+  let ok = true;
+  for (const e of ENGINES) {
+    const t = getFloorTrace(e.id);
+    const last = t.points.at(-1)!;
+    console.log(
+      `${e.id.padEnd(8)} D=${last.D.toFixed(1).padStart(6)}  D'=${last.accounted.toFixed(2)}  D_L=${last.landauer.toFixed(2)}`,
+    );
+    if (!theoremL(t.points)) ok = false;
+  }
+  if (!theoremT("koch") || !theoremT("rule90") || !theoremS()) ok = false;
+  const best = closestToCeiling();
+  console.log(`closest ${best.id} D_L=${best.landauer.toFixed(2)}`);
+  console.log(ok ? "PASS" : "FAIL", "floor");
+  process.exit(ok ? 0 : 1);
+}
+
 if (cmd === "spec") {
   console.log(PHASE2_STATUS.toUpperCase(), PHASE2_FROZEN_ON);
   console.log(QUESTION);
@@ -91,5 +109,5 @@ if (cmd === "spec") {
   process.exit(0);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify|thermo|spec]");
+console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec]");
 process.exit(2);

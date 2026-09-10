@@ -70,6 +70,16 @@ npx tsx src/cli.ts thermo
 
 [`experiments/THERMO.md`](experiments/THERMO.md).
 
+## Floor
+
+Émettre la chaîne coûte sa longueur. D_L = C/(S+K+C) < 1. Le SLP peut avoir D′ > 1 ; pas D_L.
+
+```
+npx tsx src/cli.ts floor
+```
+
+[`experiments/FLOOR.md`](experiments/FLOOR.md).
+
 ## Phase 2 (gelée, pas courue)
 
 C n’est plus n. `max C/S` sous `K ≤ K_max`. Premier examen : F1, une fonction, Q_test disjoint. **Pas de runner.**

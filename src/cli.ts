@@ -1,6 +1,9 @@
 import { runCompleteProtocol } from "./battery";
 import { getSweep, REGIMES } from "./limits";
 import { evolve, pointSeed, caDensity, caStateSize } from "./ca/elementary";
+import { CORPORA } from "./corpora";
+import { runSequitur, runRepair } from "./algorithms";
+import { oracleFor, tamperOneTerminal, verify } from "./verify";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -39,5 +42,29 @@ if (cmd === "ca") {
   process.exit(0);
 }
 
-console.error("usage: axiom [battery|limits|ca]");
+if (cmd === "verify") {
+  const tile = CORPORA.find((c) => c.id === "repeat")!.text;
+  const r = runSequitur(tile);
+  const withS = verify(r, oracleFor("original", tile));
+  const digestOnly = verify(r, oracleFor("digest", tile));
+  const none = verify(r, oracleFor("none", tile));
+  const dirty = tamperOneTerminal(r, tile);
+  const hole = verify(dirty, oracleFor("none", tile));
+  const caught = verify(dirty, oracleFor("original", tile));
+  const rp = runRepair(tile);
+  const ok =
+    withS.checks.find((c) => c.id === "identity")?.status === "pass" &&
+    digestOnly.checks.find((c) => c.id === "identity")?.status === "unknown" &&
+    none.checks.find((c) => c.id === "identity")?.status === "unknown" &&
+    dirty.ok === false &&
+    hole.verdict === true &&
+    caught.verdict === false &&
+    verify(rp, oracleFor("digest", tile)).checks.find((c) => c.id === "digest")?.status === "pass";
+  console.log(ok ? "PASS" : "FAIL", "verify");
+  console.log("  identity  original=pass  digest=unknown  none=unknown");
+  console.log("  tamper    caught by original, invisible without oracle");
+  process.exit(ok ? 0 : 1);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify]");
 process.exit(2);

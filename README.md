@@ -48,3 +48,15 @@ Le plus petit problème de grammaire est NP-dur. Chaque algorithme est un témoi
 ## Primitive manquante
 
 Un L-system et un automate cellulaire ont une primitive d’itération. Un SLP n’en a pas. Sur Rule 110, D_CA ≈ 800, D_Sequitur sur le raster aplati ≈ 8. L’écart est la primitive, pas la qualité du compresseur.
+
+## Vérifier
+
+D n’est un fait que si la reconstruction est vérifiée. Sans l’original, identité est indéterminée. Un digest est un témoin d’octets, pas de structure. Les invariants (utility, binaire, acyclicité) ne consultent pas la chaîne. Altérer un terminal sans oracle est invisible — c’est le trou entre Phase 1 et Phase 2.
+
+```
+npm test
+npx tsx src/cli.ts verify
+```
+
+Le protocole : [`experiments/VERIFY.md`](experiments/VERIFY.md).
+

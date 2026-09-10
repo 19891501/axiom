@@ -15,4 +15,4 @@ Interdit : app, comptes, agents, « explorer X » comme travail. Interdit : chan
 
 Une unité par session, puis on pousse. Si `experiments/runs/` n’a rien de neuf : **quand même** une unité (test, run, ou kill). Pas d’AION ici.
 
-Phase 2 a un protocole gelé (`experiments/PHASE2.md`). **Pas de runner.** F1 n’est pas exécuté. Phase 1 survit.
+Phase 2 a un protocole gelé (`experiments/PHASE2.md`) et un **NO-GO** (`experiments/NOGO.md`). **Pas de runner.** F1 = 0 %. Phase 1 survit. Prochaine unité : théorie des neuf, puis v1.0.

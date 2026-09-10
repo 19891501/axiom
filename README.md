@@ -80,11 +80,12 @@ npx tsx src/cli.ts floor
 
 [`experiments/FLOOR.md`](experiments/FLOOR.md).
 
-## Phase 2 (gelée, pas courue)
+## Phase 2 (gelée) — **NO-GO**
 
-C n’est plus n. `max C/S` sous `K ≤ K_max`. Premier examen : F1, une fonction, Q_test disjoint. **Pas de runner.**
+C n’est plus n. La question fonctionnelle n’est pas une loi nouvelle : tautologie (programme), fausse (SLP), occupée (Levin, Shannon, MDL, FlashFill). F1 = 0 %. Pas de runner.
 
-[`experiments/PHASE2.md`](experiments/PHASE2.md).
+[`experiments/NOGO.md`](experiments/NOGO.md).
+
 
 
 

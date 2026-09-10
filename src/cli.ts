@@ -6,7 +6,7 @@ import { runSequitur, runRepair } from "./algorithms";
 import { oracleFor, tamperOneTerminal, verify } from "./verify";
 import { ENGINES, getTrace } from "./thermo";
 import { closestToCeiling, getFloorTrace, theoremL, theoremS, theoremT } from "./thermoLimits";
-import { PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
+import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -104,6 +104,7 @@ if (cmd === "floor") {
 
 if (cmd === "spec") {
   console.log(PHASE2_STATUS.toUpperCase(), PHASE2_FROZEN_ON);
+  console.log(LAW_VERDICT);
   console.log(QUESTION);
   console.log("F1 not executed");
   process.exit(0);

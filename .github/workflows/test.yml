@@ -16,3 +16,4 @@ jobs:
       - run: npm test
       - run: npm run battery
       - run: npm run verify
+      - run: npm run thermo

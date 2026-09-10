@@ -4,6 +4,7 @@ import { evolve, pointSeed, caDensity, caStateSize } from "./ca/elementary";
 import { CORPORA } from "./corpora";
 import { runSequitur, runRepair } from "./algorithms";
 import { oracleFor, tamperOneTerminal, verify } from "./verify";
+import { ENGINES, getTrace } from "./thermo";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -66,5 +67,21 @@ if (cmd === "verify") {
   process.exit(ok ? 0 : 1);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify]");
+if (cmd === "thermo") {
+  let ok = true;
+  for (const e of ENGINES) {
+    const t = getTrace(e.id);
+    const last = t.points.at(-1)!;
+    console.log(
+      `${e.id.padEnd(8)} D=${last.D.toFixed(1).padStart(6)}  A=${last.A.toFixed(2)}  D'=${last.accounted.toFixed(2)}`,
+    );
+    if (e.id === "koch" && !(last.D > 50 && last.accounted < 1)) ok = false;
+    if (e.id === "rule90" && Math.abs(last.A - 1) > 1e-9) ok = false;
+    if (e.id === "slp" && last.D <= 1) ok = false;
+  }
+  console.log(ok ? "PASS" : "FAIL", "thermo");
+  process.exit(ok ? 0 : 1);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify|thermo]");
 process.exit(2);

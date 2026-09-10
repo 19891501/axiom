@@ -5,9 +5,10 @@
   "type": "module",
   "description": "CAPACITY/STATE. D = n/|G|. Neuf algorithmes, douze corpus, une batterie falsifiable. Pas une app.",
   "scripts": {
-    "test": "npx tsx --test src/battery.test.ts src/limits.test.ts src/ca/elementary.test.ts src/verify.test.ts",
+    "test": "npx tsx --test src/battery.test.ts src/limits.test.ts src/ca/elementary.test.ts src/verify.test.ts src/thermo.test.ts",
     "battery": "npx tsx src/cli.ts battery",
-    "verify": "npx tsx src/cli.ts verify"
+    "verify": "npx tsx src/cli.ts verify",
+    "thermo": "npx tsx src/cli.ts thermo"
   },
   "devDependencies": {
     "tsx": "^4.20.0"

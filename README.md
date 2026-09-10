@@ -60,3 +60,14 @@ npx tsx src/cli.ts verify
 
 Le protocole : [`experiments/VERIFY.md`](experiments/VERIFY.md).
 
+## Thermo
+
+Si K est gratuit, Koch est un mouvement perpétuel. Convention K3 : le SLP paie dans |G|, Koch et Rule 90 paient en temps. D explose. D′ = n/(|G|+K) non.
+
+```
+npx tsx src/cli.ts thermo
+```
+
+[`experiments/THERMO.md`](experiments/THERMO.md).
+
+

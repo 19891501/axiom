@@ -9,6 +9,7 @@ import { closestToCeiling, getFloorTrace, theoremL, theoremS, theoremT } from ".
 import { AXIOM_VERSION, evaluateNine, ninePass } from "./nine";
 import { evaluateRatio, ratioPass } from "./ratio";
 import { evaluateRepair, repairPass } from "./repair";
+import { PREDICT_VERDICT, evaluatePredict, predictPass } from "./predict";
 import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
@@ -143,5 +144,16 @@ if (cmd === "repair") {
   process.exit(ok ? 0 : 1);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio|repair]");
+if (cmd === "predict") {
+  let ok = predictPass();
+  for (const c of evaluatePredict()) {
+    console.log(`${c.ok ? "PASS" : "FAIL"}  ${c.id.padEnd(22)} ${c.detail}`);
+    if (!c.ok) ok = false;
+  }
+  console.log(PREDICT_VERDICT);
+  console.log(ok ? "PASS" : "FAIL", "predict");
+  process.exit(ok ? 0 : 1);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio|repair|predict]");
 process.exit(2);

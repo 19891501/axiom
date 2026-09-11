@@ -12,6 +12,8 @@ version: 1.0.0
 où: github.com/19891501/axiom
 ```
 
-Interdit : app, comptes, agents, « explorer X » comme travail. Interdit : changer le critère après un run. Interdit : un dixième algorithme, un treizième corpus.
+Interdit : app, comptes, agents, « explorer X » comme travail. Interdit : changer le critère après un run. Interdit : un dixième algorithme, un treizième corpus. Interdit : ouvrir Phase B.
 
-Phase 1 survit. Phase 2 est **NO-GO**. Phase B (état pour une capacité) : **STOP**, occupé (Jacobson, Doshi, Crutchfield, Tishby, sketches). F1 = 0 %. Predict (v1.3) : INVARIANT. Tag v1.0.
+Phase 1 CLOSED. Phase 2 NO-GO. Phase B STOP. F1 = 0 %. Predict = INVARIANT.
+
+Tableau : `experiments/STATUS.md`. Si `experiments/runs/` n’a rien de neuf : on ne fabrique pas une unité. Le gel *est* le travail.

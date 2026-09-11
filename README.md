@@ -1,10 +1,15 @@
 # Axiom
 
-CAPACITY / STATE. Un instrument, pas une app. **v1.0.**
+Instrument gelé. Pas une app. Pas une loi.
 
 ```
 D = n / |G|
 ```
+
+**Phase 1 : CLOSED.** Loi fonctionnelle : **NO-GO.** Phase B : **STOP.**
+
+Le tableau : [`experiments/STATUS.md`](experiments/STATUS.md).
+
 
 n est la chaîne reconstruite. |G| est la somme des membres droits de la grammaire. Le littéral vaut 1 par construction.
 

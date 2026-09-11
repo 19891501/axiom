@@ -14,6 +14,44 @@
 export const PHASE2_STATUS = "frozen" as const;
 export const PHASE2_FROZEN_ON = "2026-09-10";
 export const LAW_VERDICT = "NO-GO" as const;
+export const PHASE_B_VERDICT = "STOP" as const;
+export const PHASE_B_FROZEN_ON = "2026-09-11";
+export const PHASE_B_QUESTION =
+  "min M  subject to  K(M,S) ≥ K₀   — state for a capacity, not for reconstruction";
+
+/** Occupied priors. One would suffice. */
+export const PHASE_B_PRIORS = [
+  {
+    id: "succinct",
+    year: 1989,
+    who: "Jacobson",
+    what: "Rank/select in n + o(n). Exact queries, M < naive store. Test 3, already.",
+  },
+  {
+    id: "functional",
+    year: 2010,
+    who: "Doshi, Shah, Médard, Effros",
+    what: "Functional compression: recover f(X), not X. The question, named.",
+  },
+  {
+    id: "epsilon",
+    year: 1994,
+    who: "Crutchfield / computational mechanics",
+    what: "ε-machine: minimal state consistent with a predictive capacity.",
+  },
+  {
+    id: "ib",
+    year: 1999,
+    who: "Tishby, Pereira, Bialek",
+    what: "Information bottleneck: min I(X;M) under I(M;Y) ≥ K₀.",
+  },
+  {
+    id: "sketch",
+    year: 2002,
+    who: "Alon–Matias–Szegedy; Cormode–Muthukrishnan",
+    what: "Sketches / coresets: M ≪ |S|, K approximate by design.",
+  },
+] as const;
 
 export const QUESTION =
   "How much capability can a system reconstruct per persistent bit, at what reconstruction cost?";

@@ -10,7 +10,7 @@ import { AXIOM_VERSION, evaluateNine, ninePass } from "./nine";
 import { evaluateRatio, ratioPass } from "./ratio";
 import { evaluateRepair, repairPass } from "./repair";
 import { PREDICT_VERDICT, evaluatePredict, predictPass } from "./predict";
-import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
+import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, PHASE_B_VERDICT, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
 
@@ -109,6 +109,7 @@ if (cmd === "floor") {
 if (cmd === "spec") {
   console.log(PHASE2_STATUS.toUpperCase(), PHASE2_FROZEN_ON);
   console.log(LAW_VERDICT);
+  console.log("Phase B", PHASE_B_VERDICT);
   console.log(QUESTION);
   console.log("F1 not executed");
   process.exit(0);

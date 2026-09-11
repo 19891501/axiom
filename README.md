@@ -120,7 +120,9 @@ npx tsx src/cli.ts floor
 
 C n’est plus n. La question fonctionnelle n’est pas une loi nouvelle : tautologie (programme), fausse (SLP), occupée (Levin, Shannon, MDL, FlashFill). F1 = 0 %. Pas de runner.
 
-[`experiments/NOGO.md`](experiments/NOGO.md).
+Phase B (min M pour une capacité K₀) : **STOP**. Occupé — structures succinctes, compression fonctionnelle, ε-machines, IB, sketches.
+
+[`experiments/NOGO.md`](experiments/NOGO.md) · [`experiments/DECISION.md`](experiments/DECISION.md).
 
 
 

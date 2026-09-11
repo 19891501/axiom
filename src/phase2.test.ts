@@ -22,6 +22,8 @@ import {
   PHASE2_FROZEN_ON,
   PHASE2_STATUS,
   LAW_VERDICT,
+  PHASE_B_PRIORS,
+  PHASE_B_VERDICT,
   QUERY,
   TAUTOLOGIES_REFUSED,
   aIsInduced,
@@ -37,6 +39,8 @@ describe("Phase 2 spec freeze", () => {
     assert.equal(PHASE2_STATUS, "frozen");
     assert.equal(PHASE2_FROZEN_ON, "2026-09-10");
     assert.equal(LAW_VERDICT, "NO-GO");
+    assert.equal(PHASE_B_VERDICT, "STOP");
+    assert.equal(PHASE_B_PRIORS.length, 5);
   });
 
   it("C is held-out answers, not string length", () => {

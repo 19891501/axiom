@@ -19,3 +19,4 @@ jobs:
       - run: npm run thermo
       - run: npm run floor
       - run: npm run spec
+      - run: npm run nine

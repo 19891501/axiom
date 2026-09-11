@@ -1,16 +1,17 @@
 {
   "name": "axiom",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "CAPACITY/STATE. D = n/|G|. Neuf algorithmes, douze corpus, une batterie falsifiable. Pas une app.",
   "scripts": {
-    "test": "npx tsx --test src/battery.test.ts src/limits.test.ts src/ca/elementary.test.ts src/verify.test.ts src/thermo.test.ts src/phase2.test.ts src/thermoLimits.test.ts",
+    "test": "npx tsx --test src/battery.test.ts src/limits.test.ts src/ca/elementary.test.ts src/verify.test.ts src/thermo.test.ts src/phase2.test.ts src/thermoLimits.test.ts src/nine.test.ts",
     "battery": "npx tsx src/cli.ts battery",
     "verify": "npx tsx src/cli.ts verify",
     "thermo": "npx tsx src/cli.ts thermo",
     "floor": "npx tsx src/cli.ts floor",
-    "spec": "npx tsx src/cli.ts spec"
+    "spec": "npx tsx src/cli.ts spec",
+    "nine": "npx tsx src/cli.ts nine"
   },
   "devDependencies": {
     "tsx": "^4.20.0"

@@ -1,6 +1,6 @@
 # Axiom
 
-CAPACITY / STATE. Un instrument, pas une app.
+CAPACITY / STATE. Un instrument, pas une app. **v1.0.**
 
 ```
 D = n / |G|
@@ -43,7 +43,13 @@ PASS — 330/330. 11/11 structurés battent le littéral. L’aléatoire reste p
 
 Literal · Run-length · LZ78 · LZW · BPE · Sequitur · Re-Pair · Bisection · Longest match.
 
-Le plus petit problème de grammaire est NP-dur. Chaque algorithme est un témoin : K(x) ≤ |G| + O(1). Le D mesuré est un **minorant** de la densité grammaticale vraie.
+Témoins, pas records. Familles : baseline, run, dictionary, tokenizer, grammar. NP-dur : D mesuré est un minorant.
+
+```
+npx tsx src/cli.ts nine
+```
+
+[`experiments/NINE.md`](experiments/NINE.md).
 
 ## Primitive manquante
 

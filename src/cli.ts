@@ -8,6 +8,7 @@ import { ENGINES, getTrace } from "./thermo";
 import { closestToCeiling, getFloorTrace, theoremL, theoremS, theoremT } from "./thermoLimits";
 import { AXIOM_VERSION, evaluateNine, ninePass } from "./nine";
 import { evaluateRatio, ratioPass } from "./ratio";
+import { evaluateRepair, repairPass } from "./repair";
 import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
@@ -132,5 +133,15 @@ if (cmd === "ratio") {
   process.exit(ok ? 0 : 1);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio]");
+if (cmd === "repair") {
+  let ok = repairPass();
+  for (const c of evaluateRepair()) {
+    console.log(`${c.ok ? "PASS" : "FAIL"}  ${c.id.padEnd(22)} ${c.detail}`);
+    if (!c.ok) ok = false;
+  }
+  console.log(ok ? "PASS" : "FAIL", "repair");
+  process.exit(ok ? 0 : 1);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio|repair]");
 process.exit(2);

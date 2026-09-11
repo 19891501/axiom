@@ -61,6 +61,16 @@ npx tsx src/cli.ts ratio
 
 [`experiments/RATIO.md`](experiments/RATIO.md).
 
+## Repair
+
+Mieno 2022 : g*(F_n) = n productions. Le Re-Pair du lab n’est pas cet objet. L’arbitre à trois étages l’est. Les neuf restent gelés.
+
+```
+npx tsx src/cli.ts repair
+```
+
+[`experiments/REPAIR.md`](experiments/REPAIR.md).
+
 ## Primitive manquante
 
 Un L-system et un automate cellulaire ont une primitive d’itération. Un SLP n’en a pas. Sur Rule 110, D_CA ≈ 800, D_Sequitur sur le raster aplati ≈ 8. L’écart est la primitive, pas la qualité du compresseur.

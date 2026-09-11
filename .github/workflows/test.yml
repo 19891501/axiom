@@ -21,3 +21,4 @@ jobs:
       - run: npm run spec
       - run: npm run nine
       - run: npm run ratio
+      - run: npm run repair

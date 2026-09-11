@@ -20,3 +20,4 @@ jobs:
       - run: npm run floor
       - run: npm run spec
       - run: npm run nine
+      - run: npm run ratio

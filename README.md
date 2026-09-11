@@ -51,6 +51,16 @@ npx tsx src/cli.ts nine
 
 [`experiments/NINE.md`](experiments/NINE.md).
 
+## Ratio
+
+ρ = |G_alg| / |G_ref|. L’arbitre est une construction expansible, pas |G_min|. Sequitur saturé la hiérarchie du carreau (ρ = 1). Le Re-Pair du lab n’est pas l’optimum de Mieno 2022.
+
+```
+npx tsx src/cli.ts ratio
+```
+
+[`experiments/RATIO.md`](experiments/RATIO.md).
+
 ## Primitive manquante
 
 Un L-system et un automate cellulaire ont une primitive d’itération. Un SLP n’en a pas. Sur Rule 110, D_CA ≈ 800, D_Sequitur sur le raster aplati ≈ 8. L’écart est la primitive, pas la qualité du compresseur.

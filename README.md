@@ -6,7 +6,7 @@ Instrument gelé. Pas une app. Pas une loi.
 D = n / |G|
 ```
 
-**Phase 1 : CLOSED.** Loi fonctionnelle : **NO-GO.** Phase B : **STOP.**
+**Phase 1 : CLOSED.** Loi fonctionnelle : **NO-GO.** Phase B : **STOP.** Transition T1 : **instrument PASS · theory NO-GO.**
 
 Le tableau : [`experiments/STATUS.md`](experiments/STATUS.md).
 
@@ -85,6 +85,16 @@ npx tsx src/cli.ts predict
 ```
 
 [`experiments/PREDICT.md`](experiments/PREDICT.md).
+
+## Transition
+
+Arbitre : bisimulation branching. Théorie **NO-GO**. Instrument : plateau M*(K0)=1 bit < M*(K2) sur (abc)^8.
+
+```
+npx tsx src/cli.ts transition
+```
+
+[`experiments/TRANSITION.md`](experiments/TRANSITION.md).
 
 ## Primitive manquante
 

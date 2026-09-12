@@ -14,6 +14,6 @@ où: github.com/19891501/axiom
 
 Interdit : app, comptes, agents, « explorer X » comme travail. Interdit : changer le critère après un run. Interdit : un dixième algorithme, un treizième corpus. Interdit : ouvrir Phase B.
 
-Phase 1 CLOSED. Phase 2 NO-GO. Phase B STOP. F1 = 0 %. Predict = INVARIANT.
+Phase 1 CLOSED. Phase 2 NO-GO. Phase B STOP. F1 = 0 %. Predict = INVARIANT. Transition T1 = instrument, theory NO-GO. Interdit : T2, fusion AION, dixième algorithme.
 
 Tableau : `experiments/STATUS.md`. Si `experiments/runs/` n’a rien de neuf : on ne fabrique pas une unité. Le gel *est* le travail.

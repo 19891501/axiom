@@ -11,6 +11,7 @@ Responsable de projet. Une page. Pas une feuille de route.
 | Ratio | ρ contre construction | v1.1 |
 | Repair | lab ≠ Mieno | v1.2 |
 | Predict | **INVARIANT**, pas une loi | v1.3 |
+| Transition T1 | **instrument PASS · theory NO-GO** | 2026-09-12 |
 | Loi fonctionnelle / F1 | **NO-GO** · F1 = 0 % | 2026-09-10 |
 | Phase B (min M pour K₀) | **STOP** · occupé | 2026-09-11 |
 

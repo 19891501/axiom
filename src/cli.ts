@@ -10,6 +10,7 @@ import { AXIOM_VERSION, evaluateNine, ninePass } from "./nine";
 import { evaluateRatio, ratioPass } from "./ratio";
 import { evaluateRepair, repairPass } from "./repair";
 import { PREDICT_VERDICT, evaluatePredict, predictPass } from "./predict";
+import { TRANSITION_THEORY, evaluateTransition, transitionPass } from "./transition";
 import { LAW_VERDICT, PHASE2_FROZEN_ON, PHASE2_STATUS, PHASE_B_VERDICT, QUESTION } from "./phase2";
 
 const cmd = process.argv[2] ?? "battery";
@@ -156,5 +157,16 @@ if (cmd === "predict") {
   process.exit(ok ? 0 : 1);
 }
 
-console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio|repair|predict]");
+if (cmd === "transition") {
+  let ok = transitionPass();
+  for (const c of evaluateTransition()) {
+    console.log(`${c.ok ? "PASS" : "FAIL"}  ${c.id.padEnd(22)} ${c.detail}`);
+    if (!c.ok) ok = false;
+  }
+  console.log("THEORY", TRANSITION_THEORY);
+  console.log(ok ? "PASS" : "FAIL", "transition");
+  process.exit(ok ? 0 : 1);
+}
+
+console.error("usage: axiom [battery|limits|ca|verify|thermo|floor|spec|nine|ratio|repair|predict|transition]");
 process.exit(2);
